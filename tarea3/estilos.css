@@ -1,0 +1,65 @@
+*{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    background: pink;
+    font-size: 18px;
+    font-style: italic;
+ }
+ 
+ #perfil {
+ width: 220px;
+ height: 220px;
+ border-radius: 50%;
+ }
+ table{
+ border-collapse: collapse;
+ 
+ }
+ .tStyle td{
+     color: black;
+     width: 500px;
+     height: 30px;
+ 
+ }
+ .Sub {
+    background: rgb(146, 11, 117) ;
+    font-size: 20px ;
+ }
+ ul.menu {
+	font-size: 20px;
+	clear: both;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.menu li {
+    height: 20px;
+    float: left;
+    margin: 2px;
+    border-radius: 2px;
+    border: 1px solid blueviolet;
+}
+ul.menu li a{
+    text-decoration: none;
+    padding: 0%;
+    margin: 0%;
+    border: 1px  black;
+
+}
+
+#imgsucre1{
+   margin-left: 20%;
+}
+h1{
+    text-align: center;
+    font-size: 25px;
+}
+#btnvolver{
+    text-decoration: none;
+    padding: 0%;
+    margin: 0%;
+    border: 1px  black;
+}
+
