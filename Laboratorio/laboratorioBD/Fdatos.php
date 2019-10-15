@@ -1,5 +1,9 @@
 <?php
-$numero=$_POST['numero'];
+include("conexion.php");
+$numero = $_POST['numero'];
+$sql="Select * from carreras";
+$resultado= $con->query($sql);
+
 echo'<table>
 <form action="insertar.php">
 <tr>
@@ -15,18 +19,15 @@ for($i=0; $i<$numero; $i++){
   <td><input type="text" name="nombre'.$i.'" ></td>
   <td><input type="text" name="apellidos'.$i.'" ></td>
   <td><input type="text" name="cu'.$i.'" ></td>
-  <td ><input type="radio" name="femenino'.$i.'" value="male"> Femenino</td>
-  <td ><input type="radio" name="masculino'.$i.'" value="male"> Masculino</td>
-  <td><select name="carrera'.$i.'">
-  <option value="value1">Ing. Sistemas</option> 
-  <option value="value2" selected>Ing. Diseño</option>
-  <option value="value3">Ing. Telecomunicaciones</option>
-  </select></td>
-  <td></td>
+  <td ><input type="radio" name="femenino'.$i.'" value="F"> Femenino</td>
+  <td ><input type="radio" name="masculino'.$i.'" value="M"> Masculino</td>
+  <td><select name="carrera">
+  ';
+  while($fila=$resultado->fetch_assoc()){
+   echo '<option value = "'.$fila['cod_carrera'].'">'.$fila['nombre'].'</option>';
+  }
+  echo '</select></td>
   </tr>';
 }
-echo '</table>
-<input type="submit" name="insertar" >
-</form>';
+echo '</table>';
 ?>
-<br><br>
