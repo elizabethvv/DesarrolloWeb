@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio2</title>
+    <script>
+    function busquedaLetra(){
+        //palabra a adivinar: 
+        var contador=0;
+        var palabra="Elefante";
+        var letras=document.getElementsByName("letra");        
+        for(var i=0; i<palabra.length;i++){ 
+            if(letras[i].value==palabra[i] || letras[i].value==""){
+               // document.getElementById("panel").innerHTML="Bien!!";
+                document.getElementsByName("letra")[i].style.background="white";
+                document.getElementsByName("letra")[i].style.color="black";
+            }else{
+                contador++;
+                document.getElementById("panel").innerHTML=" ";
+                document.getElementById("panel").innerHTML="Error <br> Letra:"+letras[i].value+" Incorrecta. <br> Numero de errores: "+contador+"<br> Numero de intentos restantes"+(8-contador);
+                document.getElementsByName("letra")[i].style.color="white";
+                document.getElementsByName("letra")[i].style.background="red";  
+            }     
+        }     
+    }
+    function empezar(){
+        document.getElementById("panel").innerHTML="";
+        var letras=document.getElementsByName("letra");
+        for(var i=0; i<letras.length;i++){  
+        document.getElementsByName("letra")[i].value="";
+        document.getElementsByName("letra")[i].style.color="black";
+        document.getElementsByName("letra")[i].style.background="white";  
+        } 
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <p >
+           <b>Adivina Adivinador </b> 
+        </p><br>
+        Tiene mucha memoria, gran tamaño dura piel, y la nariz mas grande que en el mundo puedas ver. <br> <br>
+
+    </div>
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra">
+   <input type="text" name="letra" id="letra"><br>
+    <input type="submit" value="Comprobar" onclick="busquedaLetra()">
+    <input type="submit" value="Volver A Empezar" onclick="empezar()">
+    <div id="panel">
+
+    </div>
+</body>
+</html>

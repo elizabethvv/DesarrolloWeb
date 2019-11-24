@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio1</title>
+</head>
+<script>
+     function Rojo(){
+        var operacion=document.getElementsByName("rbseleccion"); 
+       // alert(operacion[0].checked)
+        if (operacion[0].checked){
+            document.getElementById("panel").innerHTML="rojo";
+            document.getElementById("panel").style.color="white";
+			document.getElementById("panel").style.backgroundColor="red";
+        }
+		else
+        {
+            document.getElementById("panel").style.backgroundColor="white";
+            document.getElementById("panel").innerHTML="rojo";
+            document.getElementById("panel").style.color="red";
+        }       
+     }
+
+    function Amarillo(){
+        var operacion=document.getElementsByName("rbseleccion"); 
+        if (operacion[0].checked){
+            document.getElementById("panel").innerHTML="Amarillo";
+            document.getElementById("panel").style.color="black";
+			document.getElementById("panel").style.backgroundColor="yellow";
+        }
+		else
+        {
+            document.getElementById("panel").style.backgroundColor="white";
+            document.getElementById("panel").innerHTML="Amarillo";
+            document.getElementById("panel").style.color="yellow";
+        }       
+    }
+    function Verde(){
+        var operacion=document.getElementsByName("rbseleccion"); 
+        if (operacion[0].checked){
+            document.getElementById("panel").innerHTML="Verde";
+            document.getElementById("panel").style.color="white";
+			document.getElementById("panel").style.backgroundColor="green";
+        }
+		else
+        {
+            document.getElementById("panel").style.backgroundColor="white";
+            document.getElementById("panel").innerHTML="Verde";
+            document.getElementById("panel").style.color="green";
+        }       
+     }
+
+
+
+
+</script>	
+<body>
+        <input type="submit" id="rojo" value="rojo" onclick="Rojo()"> <br>
+        <input type="submit" id="amarillo" value="amarillo" onclick="Amarillo()"> <br>
+        <input type="submit" id="verde" value="verde" onclick="Verde()"> <br>
+        Fondo <input type="radio" name="rbseleccion" checked="checked" value ="Fondo"> 
+        Primer Plano<input type="radio" name="rbseleccion" value ="PrimerPlano"> 
+        <br>
+        <br>
+            
+        <div id="panel">   
+        </div>   
+
+
+</body>
+</html>
