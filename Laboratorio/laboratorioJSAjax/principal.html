@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="llamar('fRegistrar.html');">Registrar</button>
+    <button onclick="llamar('fCambiocolor.html');">Cambiar Color</button>
+</body>
+<div id="contenido"></div>
+<div id="resultado"></div>
+<script>
+    function llamar(direccion)
+	{
+		ajax=new XMLHttpRequest();
+		ajax.onreadystatechange=function()
+		{
+		 if(ajax.readyState == 4) { 
+		 	if(ajax.status == 200) { 
+		 	 document.getElementById('contenido').innerHTML=ajax.responseText;
+		 	}
+		 	}	
+		} 
+		ajax.open('GET',direccion , true); 
+		ajax.send(); 
+	}
+    function llamarGET()
+	{
+		ajax=new XMLHttpRequest();
+		ajax.onreadystatechange=function()
+		{
+		 if(ajax.readyState == 4) { 
+		 	if(ajax.status == 200) { 
+		 	 document.getElementById('contenido').innerHTML=ajax.responseText;
+		 	}
+		 	}	
+		} 
+		cadena="txtUsuario="+encodeURIComponent(document.getElementById("txtUsuario").value)+"&";
+		cadena+="txtNombres"+encodeURIComponent(document.getElementById("txtNombres").value)+"&";
+		cadena+="txtApellidos="+encodeURIComponent(document.getElementById("txtApellidos").value)+"&";
+		cadena+="txtCorreo="+encodeURIComponent(document.getElementById("txtCorreo").value)+"&";
+		cadena+="txtPassword="+encodeURIComponent(document.getElementById("txtPassword").value)+"&";
+		cadena+="&nocache=" + Math.random();
+		
+		ajax.open('GET','registar.php?'+cadena, true); 
+		ajax.send(); 
+	}
+	function amarillo(){
+		var num=document.getElementById('num').value;
+        document.getElementById("resultado").innerHTML =  num;
+		document.getElementById("resultado").style.backgroundColor="yellow";
+        
+	}
+
+</script>
+</html>
